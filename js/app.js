@@ -35,8 +35,6 @@ function deleteDublicates(str) {
 // отрисовка карточек на странице
 function createCard(obj) {
   const card = document.createElement("div");
-  const unicKeywords = [];
-  console.log(unicKeywords);
   card.className = "main__card";
 
   card.innerHTML = `
@@ -49,3 +47,12 @@ function createCard(obj) {
   return card;
 }
 
+//добавление года в верстку
+function getYear() {
+  const date = new Date();
+  const currentYear = date.getFullYear();
+  const yearNode = document.getElementById("year");
+  return (yearNode.textContent = `${currentYear} `);
+}
+
+getYear();
